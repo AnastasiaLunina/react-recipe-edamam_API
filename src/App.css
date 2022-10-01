@@ -1,0 +1,69 @@
+.App {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.footer-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.newsletter {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.social-media-list {
+  display: flex;
+  width: 60%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.contact-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.newsletter-sign-github, .newsletter-sign-linkedin {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.bottom-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.newsletter-sign:hover {
+  color: red;
+}
+
+@media only screen and (max-width: 800px) {
+  .form {
+    width: 90%
+  }
+}
