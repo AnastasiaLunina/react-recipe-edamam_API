@@ -31,7 +31,7 @@ const InputSearch = () => {
 
     const finalSearch = (e) => {
         e.preventDefault();
-        setWordSubmitted(mySearch);
+        setWordSubmitted(`${mySearch} + 'honey'`);
     }
 
     return (
