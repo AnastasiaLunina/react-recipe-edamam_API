@@ -11,6 +11,8 @@
     "react-scripts": "5.0.1",
     "react-tilty": "^2.0.3",
     "react-tsparticles": "^2.3.3",
+    "sweetalert2": "^11.6.4",
+    "sweetalert2-react-content": "^5.0.7",
     "tsparticles": "^2.3.3",
     "web-vitals": "^2.1.4"
   },

@@ -4,6 +4,10 @@ import Recipes from '../Recipes/Recipes';
 
 import './InputSearch.css'
 import icon from '../../img/icon.png';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
  
 const InputSearch = () => {
     const MY_ID = 'a914f6f1';
@@ -19,8 +23,13 @@ const InputSearch = () => {
         const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${wordSubmitted}&app_id=${MY_ID}&app_key=${MY_KEY}
         `);
         const data = await response.json();
+        // console.log(data.count)
+        if (data.count === 0) {
+            MySwal.fire('No recipes found.');
+            setMySearch('');
+        }
+
         setMyRecipes(data.hits)
-        console.log(data)
       }
       fetchData();
     }, [wordSubmitted]);
@@ -32,6 +41,7 @@ const InputSearch = () => {
     const finalSearch = (e) => {
         e.preventDefault();
         setWordSubmitted(`${mySearch} + 'honey'`);
+        setMySearch('')
     }
 
     return (
@@ -50,7 +60,6 @@ const InputSearch = () => {
                     </button>
                 </form>
             </div>
-
             {myRecipes.map((element, index) => (
                 <Recipes label={element.recipe.label}
                          calories={element.recipe.calories}
